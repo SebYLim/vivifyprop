@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lease Option Property Management | Strategic Property Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #1a3a52;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 58, 82, 0.85), rgba(26, 58, 82, 0.85)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%234a6fa5" width="1200" height="600"/><path fill="%23335577" d="M0 400 L300 350 L600 380 L900 340 L1200 370 L1200 600 L0 600 Z"/><rect fill="%23f5f5f5" x="100" y="250" width="80" height="120"/><rect fill="%23333" x="110" y="260" width="25" height="30"/><rect fill="%23333" x="145" y="260" width="25" height="30"/><rect fill="%23666" x="125" y="320" width="30" height="50"/><rect fill="%23f5f5f5" x="400" y="220" width="100" height="140"/><rect fill="%23333" x="415" y="235" width="30" height="35"/><rect fill="%23333" x="455" y="235" width="30" height="35"/><rect fill="%23333" x="415" y="280" width="30" height="35"/><rect fill="%23333" x="455" y="280" width="30" height="35"/><rect fill="%23666" x="435" y="320" width="30" height="40"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1a3a52;
+            font-weight: 600;
+        }
+
+        /* How It Works */
+        .how-it-works-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .how-it-works-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 6px;
+            border-left: 4px solid #1a3a52;
+        }
+
+        .step h3 {
+            color: #1a3a52;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .step p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Who We Help */
+        .audience-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .audience-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .audience-card h3 {
+            color: #1a3a52;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+
+        .audience-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .audience-card li {
+            padding: 12px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .audience-card li:before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: #1a3a52;
+            font-size: 20px;
+        }
+
+        /* Why Us */
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .why-card {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .why-card h3 {
+            color: #1a3a52;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .why-card p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #1a3a52 0%, #2c5a7a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+        }
+
+        .cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: white;
+            color: #1a3a52;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: #1a3a52;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a3a52;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .contact-info {
+                display: none;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">Strategic Property Solutions</div>
+            <div class="contact-info">
+                <a href="tel:+15555551234">(555) 555-1234</a>
+                <a href="mailto:info@strategicpropertysolutions.com">info@strategicpropertysolutions.com</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Property Management for Lease Option Structures</h1>
+            <p>Helping property owners reduce vacancy risk and tenant-buyers build toward ownership through professionally managed lease option agreements</p>
+        </div>
+    </section>
+
+    <!-- How Lease Options Work -->
+    <section id="how-it-works">
+        <div class="container">
+            <h2>How Lease Options Work</h2>
+            <div class="how-it-works-content">
+                <p>A lease option combines a standard rental agreement with the right to purchase the property at a predetermined price within a specified timeframe. The tenant-buyer pays option consideration upfront and commits to monthly rent, with a portion often credited toward the eventual purchase.</p>
+                
+                <p>This structure provides owners with consistent cash flow and downside protection while giving qualified tenant-buyers time to improve credit, save for closing costs, and lock in a purchase price.</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <h3>Agreement Execution</h3>
+                        <p>Owner and tenant-buyer enter a lease with an option to purchase at a set price and term</p>
+                    </div>
+                    <div class="step">
+                        <h3>Occupancy Period</h3>
+                        <p>Tenant-buyer occupies the property, pays monthly rent, and works toward purchase readiness</p>
+                    </div>
+                    <div class="step">
+                        <h3>Option Exercise</h3>
+                        <p>If qualified, tenant-buyer exercises the option and closes on the property purchase</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Help -->
+    <section id="who-we-help">
+        <div class="container">
+            <h2>Who We Help</h2>
+            <div class="audience-cards">
+                <div class="audience-card">
+                    <h3>Property Owners</h3>
+                    <ul>
+                        <li>Reduce vacancy exposure in challenging markets</li>
+                        <li>Generate consistent cash flow with option consideration</li>
+                        <li>Protect against market downside with locked-in exit price</li>
+                        <li>Benefit from tenant-buyers with ownership mindset</li>
+                        <li>Create flexible exit strategies for investment properties</li>
+                    </ul>
+                </div>
+                <div class="audience-card">
+                    <h3>Tenant-Buyers</h3>
+                    <ul>
+                        <li>Lock in purchase price in appreciating markets</li>
+                        <li>Build equity through rent credits over time</li>
+                        <li>Time to improve credit scores and financial position</li>
+                        <li>Test property and neighborhood before commitment</li>
+                        <li>Transition to ownership with structured support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why-us">
+        <div class="container">
+            <h2>Why Work With Us</h2>
+            <div class="why-us-grid">
+                <div class="why-card">
+                    <h3>Risk Mitigation</h3>
+                    <p>We structure agreements with clear contingencies, proper documentation, and downside protection for property owners.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Thorough Screening</h3>
+                    <p>Comprehensive vetting of tenant-buyers including credit review, income verification, and purchase readiness assessment.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Compliance-First</h3>
+                    <p>All agreements are drafted with attention to state and local regulations, financing requirements, and disclosure standards.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Ongoing Management</h3>
+                    <p>Active oversight throughout the lease term including rent collection, maintenance coordination, and option tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Explore Lease Option Management?</h2>
+            <p>Whether you're a property owner looking for flexible exit strategies or a prospective tenant-buyer working toward ownership, we're here to help.</p>
+            <div class="cta-buttons">
+                <a href="mailto:info@strategicpropertysolutions.com" class="btn">Email Us</a>
+                <a href="tel:+15555551234" class="btn btn-secondary">Call (555) 555-1234</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Strategic Property Solutions. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 12px;">This website is for informational purposes only and does not constitute legal, financial, or investment advice.</p>
+        </div>
+    </footer>
+</body>
+</html>
