@@ -1,446 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lease Option Property Management | Strategic Property Solutions</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivify | Lease Option Specialists</title>
+  <meta name="description" content="Professional property management specializing in lease option and rent-to-own structures. Compliance-first, owner-focused, risk-aware." />
+  <style>
+    :root {
+      --primary: #0f2a44;       /* deep navy */
+      --secondary: #1f6f8b;     /* muted teal */
+      --accent: #c9a24d;        /* soft gold */
+      --bg-light: #f8fafc;      /* off-white */
+      --border: #e5e7eb;
+      --text-main: #1f2933;
+      --text-muted: #4b5563;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background-color: #1a3a52;
-            color: white;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        .contact-info {
-            text-align: right;
-            font-size: 14px;
-        }
-
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            margin-left: 15px;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(26, 58, 82, 0.85), rgba(26, 58, 82, 0.85)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%234a6fa5" width="1200" height="600"/><path fill="%23335577" d="M0 400 L300 350 L600 380 L900 340 L1200 370 L1200 600 L0 600 Z"/><rect fill="%23f5f5f5" x="100" y="250" width="80" height="120"/><rect fill="%23333" x="110" y="260" width="25" height="30"/><rect fill="%23333" x="145" y="260" width="25" height="30"/><rect fill="%23666" x="125" y="320" width="30" height="50"/><rect fill="%23f5f5f5" x="400" y="220" width="100" height="140"/><rect fill="%23333" x="415" y="235" width="30" height="35"/><rect fill="%23333" x="455" y="235" width="30" height="35"/><rect fill="%23333" x="415" y="280" width="30" height="35"/><rect fill="%23333" x="455" y="280" width="30" height="35"/><rect fill="%23666" x="435" y="320" width="30" height="40"/></svg>');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 120px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 22px;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.95;
-            font-weight: 300;
-        }
-
-        /* Sections */
-        section {
-            padding: 80px 0;
-        }
-
-        section:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            text-align: center;
-            color: #1a3a52;
-            font-weight: 600;
-        }
-
-        /* How It Works */
-        .how-it-works-content {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-
-        .how-it-works-content p {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .step {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 6px;
-            border-left: 4px solid #1a3a52;
-        }
-
-        .step h3 {
-            color: #1a3a52;
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .step p {
-            font-size: 16px;
-            color: #666;
-        }
-
-        /* Who We Help */
-        .audience-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .audience-card {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .audience-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .audience-card h3 {
-            color: #1a3a52;
-            margin-bottom: 20px;
-            font-size: 24px;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 15px;
-        }
-
-        .audience-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .audience-card li {
-            padding: 12px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #555;
-            font-size: 16px;
-        }
-
-        .audience-card li:before {
-            content: "▪";
-            position: absolute;
-            left: 0;
-            color: #1a3a52;
-            font-size: 20px;
-        }
-
-        /* Why Us */
-        .why-us-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .why-card {
-            background: white;
-            padding: 35px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-
-        .why-card h3 {
-            color: #1a3a52;
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-
-        .why-card p {
-            color: #666;
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, #1a3a52 0%, #2c5a7a 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .cta h2 {
-            color: white;
-        }
-
-        .cta p {
-            font-size: 20px;
-            margin-bottom: 40px;
-            opacity: 0.95;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: white;
-            color: #1a3a52;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            border: 2px solid white;
-        }
-
-        .btn:hover {
-            background-color: transparent;
-            color: white;
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background-color: white;
-            color: #1a3a52;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a3a52;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        footer p {
-            opacity: 0.8;
-            font-size: 14px;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            h2 {
-                font-size: 28px;
-            }
-
-            section {
-                padding: 50px 0;
-            }
-
-            .contact-info {
-                display: none;
-            }
-
-            .steps {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-    </style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+      line-height: 1.6;
+      background-color: #ffffff;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    header {
+      padding: 80px 0 60px;
+      background-color: var(--bg-light);
+      border-bottom: 1px solid var(--border);
+    }
+    header h1 {
+      font-size: 2.75rem;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+    header p {
+      font-size: 1.25rem;
+      max-width: 720px;
+      color: var(--text-muted);
+    }
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      color: var(--primary);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+    .card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background-color: #ffffff;
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: var(--secondary);
+    }
+    .cta {
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 72px 0;
+    }
+    .cta h2 {
+      color: #ffffff;
+    }
+    .cta p {
+      max-width: 640px;
+      font-size: 1.1rem;
+      color: #e5e7eb;
+    }
+    .cta a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cta a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      padding: 32px 0;
+      font-size: 0.9rem;
+      color: #6b7280;
+      background-color: var(--bg-light);
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">Strategic Property Solutions</div>
-            <div class="contact-info">
-                <a href="tel:+15555551234">(555) 555-1234</a>
-                <a href="mailto:info@strategicpropertysolutions.com">info@strategicpropertysolutions.com</a>
-            </div>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Property Management for Lease Option Structures</h1>
-            <p>Helping property owners reduce vacancy risk and tenant-buyers build toward ownership through professionally managed lease option agreements</p>
-        </div>
-    </section>
+  <header>
+    <div class="container">
+      <img src="logo.png" alt="Vivify Logo" style="max-width:140px; margin-bottom:24px;" />
+      <h1>Lease Option Property Management</h1>
+      <p>
+        Vivify specializes in managing residential properties structured with lease options and rent-to-own agreements. We focus on owner protection, disciplined tenant screening, and compliance-first execution.
+      </p>
+      <p style="margin-top:24px;">
+        <a href="owners.html" style="color:var(--secondary); font-weight:600; text-decoration:none;">For Property Owners →</a>
+      </p>
+    </div>
+  </header>
 
-    <!-- How Lease Options Work -->
-    <section id="how-it-works">
-        <div class="container">
-            <h2>How Lease Options Work</h2>
-            <div class="how-it-works-content">
-                <p>A lease option combines a standard rental agreement with the right to purchase the property at a predetermined price within a specified timeframe. The tenant-buyer pays option consideration upfront and commits to monthly rent, with a portion often credited toward the eventual purchase.</p>
-                
-                <p>This structure provides owners with consistent cash flow and downside protection while giving qualified tenant-buyers time to improve credit, save for closing costs, and lock in a purchase price.</p>
-
-                <div class="steps">
-                    <div class="step">
-                        <h3>Agreement Execution</h3>
-                        <p>Owner and tenant-buyer enter a lease with an option to purchase at a set price and term</p>
-                    </div>
-                    <div class="step">
-                        <h3>Occupancy Period</h3>
-                        <p>Tenant-buyer occupies the property, pays monthly rent, and works toward purchase readiness</p>
-                    </div>
-                    <div class="step">
-                        <h3>Option Exercise</h3>
-                        <p>If qualified, tenant-buyer exercises the option and closes on the property purchase</p>
-                    </div>
-                </div>
-            </div>
+  <section>
+    <div class="container">
+      <h2>How Lease Options Work</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Structured Lease</h3>
+          <p>
+            The occupant enters into a standard residential lease with clearly defined rent, term, and responsibilities. The lease stands on its own and is enforceable independent of any future option.
+          </p>
         </div>
-    </section>
-
-    <!-- Who We Help -->
-    <section id="who-we-help">
-        <div class="container">
-            <h2>Who We Help</h2>
-            <div class="audience-cards">
-                <div class="audience-card">
-                    <h3>Property Owners</h3>
-                    <ul>
-                        <li>Reduce vacancy exposure in challenging markets</li>
-                        <li>Generate consistent cash flow with option consideration</li>
-                        <li>Protect against market downside with locked-in exit price</li>
-                        <li>Benefit from tenant-buyers with ownership mindset</li>
-                        <li>Create flexible exit strategies for investment properties</li>
-                    </ul>
-                </div>
-                <div class="audience-card">
-                    <h3>Tenant-Buyers</h3>
-                    <ul>
-                        <li>Lock in purchase price in appreciating markets</li>
-                        <li>Build equity through rent credits over time</li>
-                        <li>Time to improve credit scores and financial position</li>
-                        <li>Test property and neighborhood before commitment</li>
-                        <li>Transition to ownership with structured support</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="card">
+          <h3>Separate Purchase Option</h3>
+          <p>
+            A separate option agreement may grant the tenant the right—but not the obligation—to purchase the property at a defined price and timeframe, subject to strict terms.
+          </p>
         </div>
-    </section>
-
-    <!-- Why Us -->
-    <section id="why-us">
-        <div class="container">
-            <h2>Why Work With Us</h2>
-            <div class="why-us-grid">
-                <div class="why-card">
-                    <h3>Risk Mitigation</h3>
-                    <p>We structure agreements with clear contingencies, proper documentation, and downside protection for property owners.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Thorough Screening</h3>
-                    <p>Comprehensive vetting of tenant-buyers including credit review, income verification, and purchase readiness assessment.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Compliance-First</h3>
-                    <p>All agreements are drafted with attention to state and local regulations, financing requirements, and disclosure standards.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Ongoing Management</h3>
-                    <p>Active oversight throughout the lease term including rent collection, maintenance coordination, and option tracking.</p>
-                </div>
-            </div>
+        <div class="card">
+          <h3>Active Management</h3>
+          <p>
+            We manage rent collection, compliance tracking, maintenance coordination, and communication to reduce ambiguity and protect the owner’s position throughout the lease period.
+          </p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Call to Action -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Explore Lease Option Management?</h2>
-            <p>Whether you're a property owner looking for flexible exit strategies or a prospective tenant-buyer working toward ownership, we're here to help.</p>
-            <div class="cta-buttons">
-                <a href="mailto:info@strategicpropertysolutions.com" class="btn">Email Us</a>
-                <a href="tel:+15555551234" class="btn btn-secondary">Call (555) 555-1234</a>
-            </div>
+  <section>
+    <div class="container">
+      <h2>Who We Serve</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Property Owners</h3>
+          <p>
+            Owners seeking flexible exit strategies, improved cash flow stability, or alternatives to traditional leasing or immediate sale—without relinquishing control of the asset.
+          </p>
         </div>
-    </section>
+        <div class="card">
+          <h3>Tenant-Buyers</h3>
+          <p>
+            Occupants who value stability and optionality, understand the responsibilities of a lease-option structure, and are prepared to perform under clearly documented agreements.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Strategic Property Solutions. All rights reserved.</p>
-            <p style="margin-top: 10px; font-size: 12px;">This website is for informational purposes only and does not constitute legal, financial, or investment advice.</p>
+  <section>
+    <div class="container">
+      <h2>Our Approach</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Owner-First Risk Management</h3>
+          <p>
+            We prioritize asset protection, enforceable documentation, and conservative assumptions. Lease options are treated as risk-managed operating structures—not sales promises.
+          </p>
         </div>
-    </footer>
+        <div class="card">
+          <h3>Rigorous Screening</h3>
+          <p>
+            Income verification, background checks, and documented expectations are mandatory. Not every applicant qualifies—and that is intentional.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Compliance-Oriented Execution</h3>
+          <p>
+            We operate with attention to state and local landlord-tenant regulations and coordinate with legal counsel when structuring or modifying agreements.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Start the Conversation</h2>
+      <p>
+        If you are a property owner exploring lease option management or an advisor evaluating a potential structure, we welcome an initial discussion to determine fit.
+      </p>
+      <p>
+        Email: <a href="mailto:info@vivifyproperty.com">info@vivifyproperty.com</a><br />
+        Phone: (555) 555-5555
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>
+        Vivify. All information provided is for general informational purposes only and does not constitute legal, tax, or investment advice. Lease options involve risk and require careful structuring.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+<!-- =============================== -->
+<!-- owners.html (Property Owners) -->
+<!-- Save the following as owners.html -->
+<!-- =============================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivify | Lease Option Management for Property Owners</title>
+  <meta name="description" content="Vivify works with property owners to manage lease option structures with a focus on asset protection, compliance, and disciplined execution." />
+  <style>
+    :root {
+      --primary: #0f2a44;
+      --secondary: #1f6f8b;
+      --accent: #c9a24d;
+      --bg-light: #f8fafc;
+      --border: #e5e7eb;
+      --text-main: #1f2933;
+      --text-muted: #4b5563;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+      line-height: 1.6;
+      background-color: #ffffff;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    header {
+      padding: 72px 0 48px;
+      background-color: var(--bg-light);
+      border-bottom: 1px solid var(--border);
+    }
+    h1 {
+      color: var(--primary);
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+    h2 {
+      color: var(--primary);
+      margin-top: 56px;
+    }
+    p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+    .callout {
+      border-left: 4px solid var(--accent);
+      padding: 20px 24px;
+      background-color: #fffdf7;
+      margin: 40px 0;
+    }
+    footer {
+      padding: 32px 0;
+      font-size: 0.9rem;
+      color: #6b7280;
+      background-color: var(--bg-light);
+      margin-top: 64px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <img src="logo.png" alt="Vivify Logo" style="max-width:120px; margin-bottom:20px;" />
+    <h1>For Property Owners</h1>
+    <p>
+      Vivify works with a limited number of property owners seeking structured alternatives to traditional leasing or immediate sale through properly managed lease option arrangements.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <h2>What We Do — Clearly</h2>
+    <p>
+      We manage residential properties that utilize lease options as an operating structure. The property remains owned by you. The lease governs occupancy. Any purchase option is separate, conditional, and never guaranteed.
+    </p>
+
+    <h2>Why Owners Use Lease Options</h2>
+    <p>
+      Lease options can provide flexibility where traditional leasing or selling is suboptimal. Common owner motivations include vacancy reduction, improved tenant commitment, pricing optionality, and time-based exit planning.
+    </p>
+
+    <div class="callout">
+      <strong>Important:</strong> Lease options are not sales contracts. They involve risk, require careful documentation, and are not appropriate for every property or owner.
+    </div>
+
+    <h2>Our Management Philosophy</h2>
+    <p>
+      We approach lease options conservatively. Screening standards are higher than typical rentals. Documentation is explicit. Expectations are documented. We prioritize enforceability and downside protection over volume.
+    </p>
+
+    <h2>What We Are Not</h2>
+    <p>
+      We are not marketers selling homeownership promises. We do not guarantee outcomes. We do not blur the line between leasing and selling. Our role is operational management and risk control.
+    </p>
+
+    <h2>Initial Discussion</h2>
+    <p>
+      If you are evaluating whether a lease option structure is appropriate for your property, an initial conversation can determine fit before any commitments are made.
+    </p>
+    <p style="margin:24px 0;">
+      <a href="mailto:info@vivifyproperty.com" style="display:inline-block; background-color:var(--primary); color:#ffffff; padding:14px 22px; border-radius:8px; text-decoration:none; font-weight:600;">Request an Initial Discussion</a>
+    </p>
+    <p>
+      Email: <a href="mailto:info@vivifyproperty.com">info@vivifyproperty.com</a><br />
+      Phone: (555) 555-5555
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>
+      Vivify. Information provided is for general informational purposes only and does not constitute legal, tax, or investment advice. Owners should consult qualified professionals before entering any lease option arrangement.
+    </p>
+  </div>
+</footer>
+
 </body>
 </html>
