@@ -109,50 +109,103 @@
     .back-link:hover {
       text-decoration: underline;
     }
-    /* =====================
-   Net Comparison Section
-   ===================== */
-
-.net-comparison-section {
-  padding: 60px 0;
-  text-align: center;
-  background: #fafafa;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.net-comparison-section .container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.net-comparison-section h2 {
+ .comparison-section {
+  background: #f8f8f6;
+  padding: 80px 20px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 12px;
-  font-weight: 700;
 }
 
-.net-comparison-section .subtitle {
+.comparison-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.comparison-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #8b2c2c;
+  letter-spacing: 1px;
+}
+
+.comparison-header .tagline {
   font-size: 1.1rem;
   color: #555;
-  margin-bottom: 24px;
+  margin-top: 10px;
 }
 
-.net-comparison-section .comparison-image {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.comparison-card {
+  background: #ffffff;
+  padding: 40px;
   border: 1px solid #ddd;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 24px;
 }
 
-.net-comparison-section .note {
+.comparison-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.comparison-card.highlight {
+  border: 2px solid #8b2c2c;
+}
+
+.comparison-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comparison-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dotted #ccc;
+  font-size: 0.95rem;
+}
+
+.comparison-list span {
+  color: #666;
+}
+
+.comparison-list strong {
+  color: #333;
+}
+
+.net-price {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #ccc;
   font-size: 1rem;
-  color: #444;
+  text-align: right;
+}
+
+.net-price strong {
+  display: block;
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 5px;
+}
+
+.net-price.accent strong {
+  color: #8b2c2c;
+}
+
+.difference {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #8b2c2c;
+  letter-spacing: 1px;
 }
     @media (max-width: 600px) {
       header h1 {
@@ -177,16 +230,55 @@
     </div>
   </header>
   
-  <section class="net-comparison-section">
-  <div class="container">
-    <div class="comparison-content">
-      <h2>Net Selling Price Comparison</h2>
-      <p class="subtitle">Realtor vs. Lease Purchase Advantage</p>
-      <img src="assets/net-price-comparison.png" alt="Net Selling Price Chart" class="comparison-image">
-      <p class="note">Insert your description or call-to-action here.</p>
+  <section class="comparison-section">
+  <div class="comparison-header">
+    <h1>THERE'S A BETTER WAY TO SELL YOUR HOUSE!</h1>
+    <p class="tagline">Hassle Free, Haggle Free, Commission Free!</p>
+  </div>
+
+  <div class="comparison-grid">
+    <!-- LEFT COLUMN -->
+    <div class="comparison-card">
+      <h2>Selling With a Realtor</h2>
+
+      <ul class="comparison-list">
+        <li><span>Starting list price</span><strong>$350,000</strong></li>
+        <li><span>Open house & price drops</span><strong>$339,000</strong></li>
+        <li><span>Offer accepted</span><strong>$325,000</strong></li>
+        <li><span>Commissions & closing costs</span><strong>-$23,000</strong></li>
+        <li><span>5 mortgage payments</span><strong>-$17,500</strong></li>
+      </ul>
+
+      <div class="net-price">
+        True NET selling price
+        <strong>$284,500</strong>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="comparison-card highlight">
+      <h2>Selling With the Lease Purchase Advantage</h2>
+
+      <ul class="comparison-list">
+        <li><span>Actual selling price</span><strong>$355,000</strong></li>
+        <li><span>Realtor commissions</span><strong>$0</strong></li>
+        <li><span>Estimated closing costs</span><strong>-$2,500</strong></li>
+        <li><span>Rent credits / concessions</span><strong>-$7,000</strong></li>
+        <li><span>2 mortgage payments</span><strong>-$7,000</strong></li>
+      </ul>
+
+      <div class="net-price accent">
+        True NET selling price
+        <strong>$338,500</strong>
+      </div>
     </div>
   </div>
+
+  <div class="difference">
+    THAT’S A $54,000 DIFFERENCE!
+  </div>
 </section>
+
 
   <section>
     <div class="container">
