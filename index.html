@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vivify | Property Management & Structured Lease Solutions</title>
-  <meta name="description" content="Vivify is a property management company focused on structured lease solutions, including lease options and rent-to-own arrangements, with an owner-first, compliance-driven approach." />
+  <title>Vivify | Property Solutions</title>
 
   <style>
     :root {
@@ -14,7 +13,7 @@
       --bg-light: #f8fafc;
       --border: #e5e7eb;
       --text-main: #1f2933;
-      --text-muted: #4b5563;
+      --text-muted: #6b7280;
     }
 
     body {
@@ -22,7 +21,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text-main);
       line-height: 1.6;
-      background-color: #ffffff;
+      background: #ffffff;
     }
 
     .container {
@@ -31,40 +30,78 @@
       padding: 0 24px;
     }
 
-    /* ✅ UNIFIED CTA (TOP + BOTTOM) */
-    .cta {
-      background-color: var(--primary);
+    /* 🔥 TOP BRAND BAR */
+    .top-bar {
+      background: var(--primary);
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .brand {
       color: #ffffff;
-      padding: 96px 0 72px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .brand span {
+      font-weight: 400;
+      opacity: 0.6;
+      margin-left: 8px;
+      letter-spacing: 1px;
+    }
+
+    /* 🔥 HERO CTA */
+    .cta {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 100px 0 80px;
       text-align: center;
     }
 
-    .cta h1,
-    .cta h2,
-    .cta p {
-      color: #ffffff;
-      margin-top: 0;
+    .cta h1 {
+      font-size: 3rem;
+      margin: 0 0 16px;
+      letter-spacing: 0.5px;
     }
 
     .cta p {
       max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #e5e7eb;
+      margin: 0 auto 24px;
+      font-size: 1.2rem;
+      color: #d1d5db;
     }
 
-    .cta a {
-      color: var(--accent);
-      text-decoration: none;
+    .cta-button {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--accent);
+      color: #111827;
+      padding: 14px 28px;
       font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.2s ease;
     }
 
-    .cta a:hover {
+    .cta-button:hover {
+      opacity: 0.9;
+    }
+
+    .cta a.secondary {
+      display: block;
+      margin-top: 18px;
+      color: #d1d5db;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    .cta a.secondary:hover {
       text-decoration: underline;
     }
 
     section {
-      padding: 64px 0;
+      padding: 70px 0;
       border-bottom: 1px solid var(--border);
     }
 
@@ -72,81 +109,32 @@
       font-size: 2rem;
       margin-bottom: 24px;
       color: var(--primary);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-    }
-
-    .card {
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background-color: #ffffff;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      color: var(--secondary);
-    }
-
-    footer {
-      padding: 32px 0;
-      font-size: 0.9rem;
-      color: #6b7280;
-      background-color: var(--bg-light);
-    }
-
-    /* COMPARISON SECTION */
-    .comparison-section {
-      background: #ffffff;
-      padding: 80px 20px;
-    }
-
-    .comparison-header {
       text-align: center;
-      margin-bottom: 56px;
     }
 
-    .comparison-header h1 {
-      font-size: 2.25rem;
-      font-weight: 700;
-      color: #1f2933;
-    }
-
-    .comparison-header .tagline {
-      font-size: 1rem;
-      color: #6b7280;
-      margin-top: 10px;
-    }
-
+    /* 🔥 COMPARISON */
     .comparison-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 40px;
-      max-width: 1100px;
-      margin: 0 auto;
+      margin-top: 40px;
     }
 
     .comparison-card {
       background: #f9fafb;
-      padding: 40px;
-      border: 1px solid #e5e7eb;
-      border-radius: 6px;
-    }
-
-    .comparison-card h2 {
-      font-size: 1.35rem;
-      margin-bottom: 24px;
-      color: #374151;
+      padding: 36px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
     }
 
     .comparison-card.highlight {
       background: #ffffff;
       border: 1px solid #d1d5db;
+    }
+
+    .comparison-card h3 {
+      margin-bottom: 20px;
+      color: #374151;
     }
 
     .comparison-list {
@@ -163,25 +151,58 @@
       font-size: 0.95rem;
     }
 
-    .net-price {
-      margin-top: 32px;
-      padding-top: 18px;
-      border-top: 1px solid #d1d5db;
+    .net {
+      margin-top: 28px;
       text-align: right;
-    }
-
-    .net-price strong {
-      display: block;
-      font-size: 1.45rem;
       font-weight: 700;
-      margin-top: 6px;
+      font-size: 1.3rem;
     }
 
     .difference {
       text-align: center;
-      margin-top: 64px;
-      font-size: 1.75rem;
+      margin-top: 50px;
+      font-size: 1.6rem;
       font-weight: 700;
+    }
+
+    /* 🔥 SERVICES */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #ffffff;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--secondary);
+    }
+
+    /* 🔥 FOOTER CTA */
+    .cta-bottom {
+      background: var(--primary);
+      color: #ffffff;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .cta-bottom p {
+      color: #d1d5db;
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7280;
+      background: var(--bg-light);
     }
 
     @media (max-width: 600px) {
@@ -194,72 +215,69 @@
 
 <body>
 
-  <!-- ✅ TOP CTA (FIXED) -->
+  <!-- 🔥 BRAND BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="brand">VIVIFY <span>REAL ESTATE</span></div>
+    </div>
+  </div>
+
+  <!-- 🔥 HERO -->
   <header class="cta">
     <div class="container">
       <h1>Sell Your Property Without Agents, Fees, or Delays</h1>
-      <p>
-        No commissions. No repairs. Structured solutions that work on your timeline.
-      </p>
-      <p style="margin-top:28px;">
-        <a href="owners.html">Information for Property Owners →</a>
-      </p>
+      <p>No commissions. No repairs. Structured solutions that work on your timeline.</p>
+      
+      <a href="#" class="cta-button">Get Your Cash Offer</a>
+      <a href="owners.html" class="secondary">Learn More for Property Owners →</a>
     </div>
   </header>
 
-  <!-- COMPARISON -->
-  <section class="comparison-section">
-    <div class="comparison-header">
-      <h1>THERE'S A BETTER WAY TO SELL YOUR HOUSE!</h1>
-      <p class="tagline">Hassle Free, Haggle Free, Commission Free!</p>
-    </div>
+  <!-- 🔥 COMPARISON -->
+  <section>
+    <div class="container">
+      <h2>There’s a Better Way to Sell</h2>
 
-    <div class="comparison-grid">
-      <div class="comparison-card">
-        <h2>Selling With a Realtor</h2>
-        <ul class="comparison-list">
-          <li><span>Starting list price</span><strong>$350,000</strong></li>
-          <li><span>After price drops</span><strong>$325,000</strong></li>
-          <li><span>Costs & commissions</span><strong>-$40,500</strong></li>
-        </ul>
-        <div class="net-price">
-          Net
-          <strong>$284,500</strong>
+      <div class="comparison-grid">
+        <div class="comparison-card">
+          <h3>Traditional Sale</h3>
+          <ul class="comparison-list">
+            <li><span>Sale Price</span><strong>$325,000</strong></li>
+            <li><span>Fees & Costs</span><strong>-$40,500</strong></li>
+          </ul>
+          <div class="net">$284,500 Net</div>
+        </div>
+
+        <div class="comparison-card highlight">
+          <h3>Vivify Approach</h3>
+          <ul class="comparison-list">
+            <li><span>Sale Price</span><strong>$355,000</strong></li>
+            <li><span>Fees</span><strong>$0</strong></li>
+          </ul>
+          <div class="net">$338,500 Net</div>
         </div>
       </div>
 
-      <div class="comparison-card highlight">
-        <h2>Lease Purchase Advantage</h2>
-        <ul class="comparison-list">
-          <li><span>Selling price</span><strong>$355,000</strong></li>
-          <li><span>Fees</span><strong>$0</strong></li>
-          <li><span>Costs</span><strong>-$16,500</strong></li>
-        </ul>
-        <div class="net-price">
-          Net
-          <strong>$338,500</strong>
-        </div>
-      </div>
-    </div>
-
-    <div class="difference">
-      $54,000 MORE IN YOUR POCKET
+      <div class="difference">$54,000 More in Your Pocket</div>
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- 🔥 SERVICES -->
   <section>
     <div class="container">
-      <h2>What We Manage</h2>
+      <h2>What We Do</h2>
+
       <div class="grid">
         <div class="card">
           <h3>Structured Leases</h3>
-          <p>High-quality tenants, strong documentation, and enforcement.</p>
+          <p>High-quality tenants and strong documentation.</p>
         </div>
+
         <div class="card">
           <h3>Lease Options</h3>
-          <p>Flexible exit strategies without giving up control.</p>
+          <p>Flexible exit strategies without losing control.</p>
         </div>
+
         <div class="card">
           <h3>Full Oversight</h3>
           <p>We handle operations so you don’t deal with tenants.</p>
@@ -268,8 +286,8 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta">
+  <!-- 🔥 CLOSE CTA -->
+  <section class="cta-bottom">
     <div class="container">
       <h2>Start with a Conversation</h2>
       <p>Email: vivfyprop@gmail.com<br>Phone: (617) 658-3455</p>
@@ -277,9 +295,7 @@
   </section>
 
   <footer>
-    <div class="container">
-      <p>Vivify. Informational purposes only.</p>
-    </div>
+    Vivify Real Estate. Informational purposes only.
   </footer>
 
 </body>
