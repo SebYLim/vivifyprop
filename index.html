@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vivify | Property Solutions</title>
-
+  <title>Vivify | Property Management & Structured Lease Solutions</title>
+  <meta name="description" content="Vivify is a property management company focused on structured lease solutions, including lease options and rent-to-own arrangements, with an owner-first, compliance-driven approach." />
   <style>
     :root {
-      --primary: #0f2a44;
-      --secondary: #1f6f8b;
-      --accent: #c9a24d;
-      --bg-light: #f8fafc;
+      --primary: #0f2a44;       /* deep navy */
+      --secondary: #1f6f8b;     /* muted teal */
+      --accent: #c9a24d;        /* soft gold */
+      --bg-light: #f8fafc;      /* off-white */
       --border: #e5e7eb;
       --text-main: #1f2933;
-      --text-muted: #6b7280;
+      --text-muted: #4b5563;
     }
 
     body {
@@ -21,280 +21,340 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text-main);
       line-height: 1.6;
-      background: #ffffff;
+      background-color: #ffffff;
     }
-
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 24px;
     }
-
-    /* 🔥 TOP BRAND BAR */
-    .top-bar {
-      background: var(--primary);
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .brand {
-      color: #ffffff;
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-
-    .brand span {
-      font-weight: 400;
-      opacity: 0.6;
-      margin-left: 8px;
-      letter-spacing: 1px;
-    }
-
-    /* 🔥 HERO CTA */
-    .cta {
-      background: var(--primary);
-      color: #ffffff;
-      padding: 100px 0 80px;
-      text-align: center;
-    }
-
-    .cta h1 {
-      font-size: 3rem;
-      margin: 0 0 16px;
-      letter-spacing: 0.5px;
-    }
-
-    .cta p {
-      max-width: 700px;
-      margin: 0 auto 24px;
-      font-size: 1.2rem;
-      color: #d1d5db;
-    }
-
-    .cta-button {
-      display: inline-block;
-      margin-top: 10px;
-      background: var(--accent);
-      color: #111827;
-      padding: 14px 28px;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: 0.2s ease;
-    }
-
-    .cta-button:hover {
-      opacity: 0.9;
-    }
-
-    .cta a.secondary {
-      display: block;
-      margin-top: 18px;
-      color: #d1d5db;
-      font-size: 0.95rem;
-      text-decoration: none;
-    }
-
-    .cta a.secondary:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      padding: 70px 0;
+    header {
+      padding: 96px 0 72px;
+      background-color: var(--bg-light);
       border-bottom: 1px solid var(--border);
     }
-
+    header h1 {
+      font-size: 3.25rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+    header h1 span {
+      color: var(--secondary);
+    }
+    header p {
+      font-size: 1.25rem;
+      max-width: 760px;
+      color: var(--text-muted);
+    }
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+    }
     h2 {
       font-size: 2rem;
       margin-bottom: 24px;
       color: var(--primary);
-      text-align: center;
     }
-
-    /* 🔥 COMPARISON */
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 40px;
-      margin-top: 40px;
-    }
-
-    .comparison-card {
-      background: #f9fafb;
-      padding: 36px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-    }
-
-    .comparison-card.highlight {
-      background: #ffffff;
-      border: 1px solid #d1d5db;
-    }
-
-    .comparison-card h3 {
-      margin-bottom: 20px;
-      color: #374151;
-    }
-
-    .comparison-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .comparison-list li {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px dotted #d1d5db;
-      font-size: 0.95rem;
-    }
-
-    .net {
-      margin-top: 28px;
-      text-align: right;
-      font-weight: 700;
-      font-size: 1.3rem;
-    }
-
-    .difference {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    /* 🔥 SERVICES */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
+      gap: 32px;
     }
-
     .card {
-      padding: 26px;
+      padding: 28px;
       border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #ffffff;
+      border-radius: 12px;
+      background-color: #ffffff;
     }
-
     .card h3 {
       margin-top: 0;
+      margin-bottom: 12px;
       color: var(--secondary);
     }
-
-    /* 🔥 FOOTER CTA */
-    .cta-bottom {
-      background: var(--primary);
+    .cta {
+      background-color: var(--primary);
       color: #ffffff;
-      text-align: center;
-      padding: 80px 0;
+      padding: 72px 0;
     }
-
-    .cta-bottom p {
-      color: #d1d5db;
+    .cta h2 {
+      color: #ffffff;
     }
-
+    .cta p {
+      max-width: 640px;
+      font-size: 1.1rem;
+      color: #e5e7eb;
+    }
+    .cta a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cta a:hover {
+      text-decoration: underline;
+    }
     footer {
-      padding: 30px 0;
-      text-align: center;
-      font-size: 0.85rem;
+      padding: 32px 0;
+      font-size: 0.9rem;
       color: #6b7280;
-      background: var(--bg-light);
+      background-color: var(--bg-light);
     }
+    .back-link {
+      display: inline-block;
+      margin-top: 24px;
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .comparison-section {
+  background: #ffffff;
+  padding: 80px 20px;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
 
+.comparison-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.comparison-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1f2933; /* dark slate */
+  letter-spacing: 0.5px;
+}
+
+.comparison-header .tagline {
+  font-size: 1rem;
+  color: #6b7280; /* muted gray */
+  margin-top: 10px;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.comparison-card {
+  background: #f9fafb; /* light neutral */
+  padding: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
+.comparison-card h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 24px;
+}
+
+.comparison-card.highlight {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+
+.comparison-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comparison-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dotted #d1d5db;
+  font-size: 0.95rem;
+}
+
+.comparison-list span {
+  color: #6b7280;
+}
+
+.comparison-list strong {
+  color: #111827;
+  font-weight: 500;
+}
+
+.net-price {
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  text-align: right;
+  color: #4b5563;
+}
+
+.net-price strong {
+  display: block;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 6px;
+}
+
+.net-price.accent strong {
+  color: #0f172a; /* subtle emphasis, not marketing */
+}
+
+.difference {
+  text-align: center;
+  margin-top: 64px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 0.5px;
+}
     @media (max-width: 600px) {
-      .cta h1 {
-        font-size: 2.2rem;
+      header h1 {
+        font-size: 2.4rem;
       }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- 🔥 BRAND BAR -->
-  <div class="top-bar">
+  <!-- ================= INDEX.HTML ================= -->
+
+  <header>
     <div class="container">
-      <div class="brand">VIVIFY <span>REAL ESTATE</span></div>
+      <h1>Vivify | Lease Options</h1>
+      <p>
+        A property management company specializing in structured lease solutions, including lease options and rent-to-own arrangements. Owner-first, compliance-driven, and deliberately selective.
+      </p>
+      <p style="margin-top:28px;">
+        <a href="owners.html" style="color:var(--secondary); font-weight:600; text-decoration:none;">Information for Property Owners →</a>
+      </p>
+    </div>
+  </header>
+  
+  <section class="comparison-section">
+  <div class="comparison-header">
+    <h1>THERE'S A BETTER WAY TO SELL YOUR HOUSE!</h1>
+    <p class="tagline">Hassle Free, Haggle Free, Commission Free!</p>
+  </div>
+
+  <div class="comparison-grid">
+    <!-- LEFT COLUMN -->
+    <div class="comparison-card">
+      <h2>Selling With a Realtor</h2>
+
+      <ul class="comparison-list">
+        <li><span>Starting list price</span><strong>$350,000</strong></li>
+        <li><span>Open house & price drops</span><strong>$339,000</strong></li>
+        <li><span>Offer accepted</span><strong>$325,000</strong></li>
+        <li><span>Commissions & closing costs</span><strong>-$23,000</strong></li>
+        <li><span>5 mortgage payments</span><strong>-$17,500</strong></li>
+      </ul>
+
+      <div class="net-price">
+        True NET selling price
+        <strong>$284,500</strong>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="comparison-card highlight">
+      <h2>Selling With the Lease Purchase Advantage</h2>
+
+      <ul class="comparison-list">
+        <li><span>Actual selling price</span><strong>$355,000</strong></li>
+        <li><span>Realtor commissions</span><strong>$0</strong></li>
+        <li><span>Estimated closing costs</span><strong>-$2,500</strong></li>
+        <li><span>Rent credits / concessions</span><strong>-$7,000</strong></li>
+        <li><span>2 mortgage payments</span><strong>-$7,000</strong></li>
+      </ul>
+
+      <div class="net-price accent">
+        True NET selling price
+        <strong>$338,500</strong>
+      </div>
     </div>
   </div>
 
-  <!-- 🔥 HERO -->
-  <header class="cta">
-    <div class="container">
-      <h1>Sell Your Property Without Agents, Fees, or Delays</h1>
-      <p>No commissions. No repairs. Structured solutions that work on your timeline.</p>
-      
-      <a href="owners.html" class="secondary">Learn More for Property Owners →</a>
-    </div>
-  </header>
+  <div class="difference">
+    THAT’S A $54,000 DIFFERENCE!
+  </div>
+</section>
 
-  <!-- 🔥 COMPARISON -->
+
   <section>
     <div class="container">
-      <h2>There’s a Better Way to Sell</h2>
-
-      <div class="comparison-grid">
-        <div class="comparison-card">
-          <h3>Traditional Sale</h3>
-          <ul class="comparison-list">
-            <li><span>Sale Price</span><strong>$325,000</strong></li>
-            <li><span>Fees & Costs</span><strong>-$40,500</strong></li>
-          </ul>
-          <div class="net">$284,500 Net</div>
-        </div>
-
-        <div class="comparison-card highlight">
-          <h3>Vivify Approach</h3>
-          <ul class="comparison-list">
-            <li><span>Sale Price</span><strong>$355,000</strong></li>
-            <li><span>Fees</span><strong>$0</strong></li>
-          </ul>
-          <div class="net">$338,500 Net</div>
-        </div>
-      </div>
-
-      <div class="difference">$54,000 More in Your Pocket</div>
-    </div>
-  </section>
-
-  <!-- 🔥 SERVICES -->
-  <section>
-    <div class="container">
-      <h2>What We Do</h2>
-
+      <h2>What We Manage</h2>
       <div class="grid">
         <div class="card">
-          <h3>Structured Leases</h3>
-          <p>High-quality tenants and strong documentation.</p>
+          <h3>Structured Residential Leases</h3>
+          <p>
+            Standard residential leases executed with higher screening standards, clear documentation, and disciplined enforcement to protect long-term asset value.
+          </p>
         </div>
-
         <div class="card">
-          <h3>Lease Options</h3>
-          <p>Flexible exit strategies without losing control.</p>
+          <h3>Lease Option Arrangements</h3>
+          <p>
+            Where appropriate, a separate purchase option may be layered onto a lease. Options are conditional, documented independently, and never represented as guaranteed outcomes.
+          </p>
         </div>
-
         <div class="card">
-          <h3>Full Oversight</h3>
-          <p>We handle operations so you don’t deal with tenants.</p>
+          <h3>Risk-Free Marketing</h3>
+          <p>
+            Continue to sell your property on the market while we search for potential tenant-buyers for you to vet. 
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 🔥 CLOSE CTA -->
-  <section class="cta-bottom">
+  <section>
+    <div class="container">
+      <h2>Our Philosophy</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Owner-First Risk Control</h3>
+          <p>
+            We prioritize enforceability, downside protection, and clarity. Lease options are operational structures, not sales promises.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Selective by Design</h3>
+          <p>
+            Not every property or occupant is a fit. We intentionally limit volume to maintain control and consistency.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Compliance-Oriented</h3>
+          <p>
+            Operations are aligned with state and local landlord-tenant regulations, with legal coordination where appropriate.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
     <div class="container">
       <h2>Start with a Conversation</h2>
-      <p>Email: vivfyprop@gmail.com<br>Phone: (617) 658-3455</p>
+      <p>
+        If you are a property owner or advisor evaluating a structured lease or lease option strategy, an initial discussion can determine alignment before any commitments.
+      </p>
+      <p>
+        Email: <a href="mailto:vivfyprop@gmail.com">vivifyprop@gmail.com</a><br />
+        Phone: (617) 658-3455
+      </p>
     </div>
   </section>
 
   <footer>
-    Vivify Real Estate. Informational purposes only.
+    <div class="container">
+      <p>
+        Vivify. All information provided is for general informational purposes only and does not constitute legal, tax, or investment advice.
+      </p>
+    </div>
   </footer>
 
 </body>
